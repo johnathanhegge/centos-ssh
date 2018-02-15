@@ -54,7 +54,7 @@
             "description": "Launch a session with all boot services, including SSH (if installed).  Connection address and credentials will appear in your web browser once available.",
             "parameters": {}
         },
-        "Jupyter Notebook": {
+        "Notebook": {
             "path": "/usr/local/bin/nimbix_notebook",
             "interactive": true,
             "name": "Jupyter Notebook",
