@@ -1,0 +1,77 @@
+{
+    "name": "CentOS Linux for Intel",
+    "description": "CentOS Linux application",
+    "author": "jhegge",
+    "licensed": true,
+    "classifications": [
+        "Software Development"
+    ],
+    "machines": [
+        "*"
+    ],
+    "vault-types": [
+        "FILE",
+        "BLOCK",
+        "BLOCK_ARRAY",
+        "OBJECT"
+    ],
+    "commands": {
+        "Batch": {
+            "path": "/bin/bash",
+            "interactive": false,
+            "name": "Batch",
+            "description": "Run a batch command using /bin/bash.  The output may be monitored directly in your web browser.",
+            "parameters": {
+                "-l": {
+                    "name": "-l",
+                    "description": "-l",
+                    "type": "CONST",
+                    "value": "-l",
+                    "positional": true,
+                    "required": true
+                },
+                "-c": {
+                    "name": "-c",
+                    "description": "-c",
+                    "type": "CONST",
+                    "value": "-c",
+                    "positional": true,
+                    "required": true
+                },
+                "command": {
+                    "name": "Command",
+                    "description": "Command to run",
+                    "type": "STR",
+                    "positional": true,
+                    "required": true
+                }
+            }
+        },
+        "Server": {
+            "path": "/sbin/init",
+            "interactive": true,
+            "name": "Server",
+            "description": "Launch a session with all boot services, including SSH (if installed).  Connection address and credentials will appear in your web browser once available.",
+            "parameters": {}
+        },
+        "GUI": {
+            "path": "/usr/local/bin/nimbix_desktop",
+            "interactive": true,
+            "name": "GUI",
+            "description": "Run a GUI command, and connect interactively directly from your web browser (requires Nimbix Desktop in image).",
+            "parameters": {
+                "command": {
+                    "name": "Command",
+                    "description": "Command to run",
+                    "type": "STR",
+                    "positional": true,
+                    "required": true
+                }
+            }
+        }
+    },
+    "image": {
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAMAAABrrFhUAAAAwFBMVEUXF27J7qZmzAB2dqnws0NAQIjtoheTIXnduNSjQoyg4WL8+fyHCWqE1zNaWZcxMH337/XFibe/v9ebMoPzwGKVKX3v3uu2a6X979ieO4j437C1tdDj99H06PGqUpWZmb/p1eXvrTT32Z900xjQoMW56IpJSYyK2Tvly9/39/qPG3R71SPyvFghIHPupSHw+uWR3Eirqsr1ynzT8LW9eK2wX55w0BD65sL////xtUr+/Pfg4OvWrM2mS5KAf6/KlL7uitL/AAAUA0lEQVR4nO3dbV/avtsHYHUoVIaAHSD+hIEy5WbDTSkiwnj/7+pqkzRNmzO3ZU2vz9/zySYg9Hs0TdO00pPN/3iduF4A1/UJ4HoBXNcngOsFcF2uAbbbrdsFcA1wP751uwCOAe6Xy3e3Am4B7pcX44pbAacAYf7l+N2tgEuAKH8I4FbAIcD9OMwfATgVcAeA86MWUHEo4AyA5CcA7gRcAcT5YwBnAo4AbpckPwVwJeAGIMmfADgScALA5GcA3Ai4AGDzswBOBBwA3C7ZYgEqleIFigdI588AFC9QOEAmfxagcIGiAbL5OYCiBQoG4PLzAAULFAvA5wcAihUoFOD+QgugUIEiAaD8IEDltriZ0uIAtmB+GKBAgcIAtrfLcbYIAFRvRQkUBnDzcp+tlzGZEvvJPXV/f1PQcrmcE7x5xwDjbzfuFqIMAJVPgBt3C5ELYKsq8euihzMAdb7I7wPPgK+zqTwAdwtF/X5Fr3vln1m/cgC1uc9VDUWr7Tv8U6nqOgJYP8hq3cD5T4GXnZ1yALuvVa7mO/QONX/OP8e+bFRGgPUizm8PUK1qCZQSIMyPNvRT8FltACxQlwuUEeBscYryvz6AL9IGmFdrSGDXkQiUEECR36AFJALw8+UEUOU3AKjOO0qB0gGcPSjymwBoCJQNgOZfiJuIAUAiUBU1knIBaOQ3A1ALlGogpJP/4YwfCUoAlAJlAkjyn4nzPwBDYRlAde4jgc0EEpiXaSi8Xpxu1PkfHgwBql+JADge6JcI4EwvvzFA9WtnigX4l3XKBLC+RBvA3e8zSQ+wXizMAQLU1c96fAvolwng4ezyOXru+VIm0DAFmH8NUMhW7ysH4HtemQDWGgKNJ1OAr8FAlL/qlQtALbBePJkCyPL3ywagFmiYApD8Ayh/xysJwDqZ91AIhPnNAID883n8335JANaLHw1eANoXhBuAGQCUv98mMyS+Vw6AaPzz2qCNQCbwZAgA5q+RERHO7x4Aj/+0BJ4MAQT5w1FxKEDyOweg41/lVrBoGALMh4L8oYDf8coBEOcXCDCzwounJzMASf7wN4blAEjypwXWVCB+qPFkCCDNv9nUhqUAIPnv8FGwWGCR5NcEoPnn2fx1HDkWcArQiLf/U4nAOhVfE2A+bEW/DuQPk0/Jv24BworzL9ZriUA6vh4Ayd+C8vf7e1bAIUCS/wEWQA9tL5/MAYT562F+z2MF3AGQ/Hdo/i8jgM8D/0APPV8aA5D8Kxy/E5XH5A8F8FxwJOAMYMHmZwR+My0eFFAD7FH/N1v5fj/e2Q1J+49/pgLOJkRo/mRHT64IUAkoAXD+ettLKpufEXAE8PwD/UPzo55OT0AFgPNv2Px7Ln8kgK6g2A3sQ+S/RijOHyeGBNBDrIACIM6/l+enbSBH5QYg+RdJOCLwJBOQA5D8ByY/7v820713ZIG8ACR/ajevISAFGEL5UVvn8oc9Q06BnAA4/+IpVb/v0HMyARmAUf7cAvkA8P4vk/+pQQROG4nA77SABCAA8u9w/mEfAMgpkAsAzq8QaMgB+Pz9vjR/ToFcu8EGnB8WeGIFhAAW+T0vcLQbxEeDQH61gABgzm//GvndHg43QACVAAww33eF+QNJfpdHg9AGoCEAAljndwggzK8QAE+Px/mTYJr5EYDlFdOWAN0aBhBsAEqB3wBAxzo/AvjzUSDAqLdDAJIGEAlcCgXu7jiA0TSb39PNjwC+P14XBjAaergFyBqAXGDDAWyy+cP1v9HLj1vAr+a0IIBR4KNj8zt4F6gQaFABAODAZtXOjwGaJ+cWAhYAYX48OXEn3wKUAjyAZX4C8MtGwBwgyo8BnhVbAEoL9ISxwE0l81djtvljABsBYwCUXx8gEXhiBfBc8TcC8LLNl58CWAiYAuD8BgCMQPJQ4wc6XxBuAxfjCmkArUOfCWuUPwEwFzAEIPlNAECBBX4oFBjHG8DUt87PABgLmAHE+Y0AIIEHPGsUdQNxB1CjJ7u9PckvO/4RAZgKGAHQ/GYAiQCdKSXT55vN2wvJzwCQ/CPt/CkAQwETgC7NbwjAC1CApCiAef40gJmAAQCT3xSAE5AADM3zZwBCAf3jAn0ANj8BWDS0a/FEBaJ6AACq/ahI/une72uXnwEwEdAGSOUnAJcmhff9m1P80x33AdNgFRXO31r1VvrVG2QADAR0AdL54/N0RmXynRAz87dPAegLaAJk8lsB/ONKA2gL6AF0syOS8gPoCmgBcPnDrnpmVxqfNmtZVRZAU0AHgM/v7VeTg01N1NOXH3/t6ioL8OvkUUNAA2AAjsj1d1Kp2qvGKNfNE7vKxo9KQ0ANMAh0hiLapTiffc2tx1ylFlACHDm/QuDI+TUEVAAt3SNS7epLBKbHzh8KKM4bqgAG++qxqyPuBj4ez49dVzkBNgNP/gUmx8wfNoHH88djljK/RifYPa6ANH8kcNz8+TtBgcDcshT5URuwLKv8egMhXqATtA2O1pJqqy/m+PhuV1+s8msOhbMCc39iN15taXya5SD7v6tzi/y6B0MZgbm/0/q9IisLoJdf+3DY+/r/DEAzv/aEyCglYAWg0/zjsvhCzTRAUzO//pRYSgADfFyZ1BcM8B39AJzLf6v8jOoe/bD99tOkbrIA2vkNJkVZAQJgdLB2jS52+E4O9v5w7397gWqMBd6WFwaVBdDPbzItzggQAIMheROv8u/x6Zv/AADyPbtEIL4JiU5lAAzyG50YGfW/2gKcp/PLAGwE0gAm+Q1PjcVtwBQgmz8BuKMT5BTAQiAFYJTf9OQoaQOGAFz+X3EfcHe5JmdMGIDl0lSABTDLb3x6HAsYAZzE+dnHrkn+xuKMCLxd8AIVTQEGwDC/8QUSUyRgAgDm/zsg+Z8W6zN83nD7Yi+QAJjmN79EBgkYAMD50S5x+yP6OpX1+gz/deXmhU1rJEABjPNbXCQVCegDSPKjBhACPMQbgb1ADGCe3+YyuVBAGwDK/+sveSMCsKb9oLUAAbDIb3WhZCigCSDNDwBYCowxgE1+u0tlp35VC4DmZ89a0PwQwOaFyXWhK4ABHm3yW14sPd1PNACS/AwAzn/9Uc8C3LwBAlsdgXElAvjzxeZSYdvL5UcaLYDkrwPr/+MxGgmmAW7RerQRwADXRV4uj/88QQ5A8s+A9f9x9euaB7h45wQudATGlcqNZYocABslgCz/eRMCsBSolBOA5k8eatL8MMByaSMwLieAJP/jeThigQGowJgXEB0ZVRwCnJu0f5q/GQ1ZBQDL9+eswFIuEOX/9uwGQHwyF8//zP6wD7H5xQCQwFIiEG0AaErQCYBIQJlfAiAVOH7+vH8+D17QgPPXgfyDx19k1kIMYCIQ5X+/yZUg7xcoAAJk/hPM34ynrSQA+gJHyJ//KzQ4gSae7mOvWkvy03lbGQAVYMPiW/DdHjv/Eb5EJSvA5//1BT3E5FcALN/xSRS5QOUY+fPtBr+jf9IC/6HJjnR+9NAgdeZGDrB8J3NE7PpOC4yZ/HluzpcLoInmduusAM7/Xyo/ujx0cMWeulQBEIGtSADFp/nz7AfyjQSxANMGhPlbX86NAKQCOH6S3+FQ+Dwt8AfnZ0eI+JxoJr8GgEwgm9/lsUBKgORv4vFvM6q/YH4dgOVPIkBmy6NbVL7jSZO3TH6nB0NU4OSE5A939rQE+bUAyL5g+zIe03uR/qQC7zfofyi/26PBWOAc57++otdrMfmtAJbfSBsI45KKBW7pvxXnAHFP+BHnf0zy4++E5/PrAESr/YUIJE0gFsCRSX7X8wHN5GoHzfxqABIZEPj2Rj8tzu8aIBHQza8CSPLKBGh+5wAnZPyf3v7xdwKD+RUA7C2YxQJJfucAzSaa5gbWvyC/FGBcqegI3DJ3rHYMEB7jnocCbP6mPL8MIJO/MoZ7Qja/670Ainz1nWn/NH8Tzi8B4O9FDgrc/6yUBaAZN3pg/YvyiwHGwK3YIYF0uQRocuHi8Y8kvxAAvhf9+OVZLuASgMuok18IIAioEnAIwDUArfwiAGgD0BFwBwBsADj/hzS/AECYXyXgDoDfAP7ONPILAITxkcANFigVANAAyJjwkX9KCSBpACEAmQu4hZqAMwB+LYcjouxRoTaANH98/Au+yBUAtJabWgLGAPH6fwebSZkAkjYg+xtICGApAZDnd3d6HAynIwAAvEm6AEV+dwDWAiCAdf6yAWgIGAEo85cOIMx9LRcwAYjnwsX5ywegFDAA0MhfQgCVgD6ATv4yAjyeX8UC+QBI/p/SYWIZAeQC2gBxfkn6sgJEAuhl13rnBUAAvfzOAJR/LUsE+GfOAYAK/yexJP+3d40/nXUAoP5Lf/HrNhzAZssX+X3gGfB1NpX/GiH7gv5govD6BHD30eRuI/8rAM8/TrP14zcBWFz+4Kook8IAtq9Pv7OFvl92Te/NyNTDaZ6OzaSK2wS2r+xtFmjhezWuM1VY/kL7gFcxQLoKzF9sJwgJAADrU/VbHa2K3QsAWwEHsC40f9G7wVdlCyg4f+HjAE4gA1B0/uIHQlmBNEDh+R2MBFM3oswArB+Kzu9iKJwWYAEc5HdyLJASYABc5HdzMMQKJABO8js6GmQEKICb/K4OhxOBGMBRfmfzAfTW3PGN6xdu8rubEIkFyNGgq/wOZ4SIAAJwl9/llBjuB6IZIYf5nc4JIoEIwFH/h8olALoF38JtfrcAkcDCbX7HAKHAg9v8rgE2p8k9WN2Ua4DNc3Hzn2A5B3BdnwCuF8B1fQJov3LWnaZLfdcsZdVHirfq7tqrXrDfD4Peqr2TfGK91R1NBTWS3WhFD2Da3vudbPW0flVaoyF+qxX0ZH3X8zvpG3v4wQEKM20PuaVjyp9IFkHnXmOrzHKQOgYAuYsRANA69KFP7fi97G1KamF6aPmS3zlIFkEN0AYX5F8DwPFR+b06+8qVL02fF2AWCBfkHwLMetJ1OmQagXj5jgJQD8Tv++8Auqr7e3n0hpdyqfwAPcn7/jOAmfr+Zntyw5KdRv5q1R5gInv/IGf6jQggpb4/TEfdcBc3GQL6sz77WL89AWsnu7uTFGDAvP+qNh2l6wjjAAigPmEyDWsD0uPVB1N2c/TRlwjX2PztbqsuKMkiSAFWyYJMTW6So13dIQ/Q8tlM7KsHh0wTqLNtpW23hDKAZFEU98nEi5caiUVLU8+MHcOmzCxk+ORo55GtCb9yVE83gGymGSPQD0dEdS/52bNskDKAZFGUt1Wq9Yb71H0lo266teJutxmOaSc4Vb0X3X2S9DE+/uWgm2oAATfqmyVtshMO7+pMF7WyuFm1CoB2xkPFXQtrQaoziskG4D7Ux7dXrw/5p/ohwDT5Efiu8FGyzsNtoM787spyG5UADKjvRNaLRGNFPgsCEOxE/ej9oBFG2IzrSSsPgHXKPO2lW0BfdWtJc4CdbFUwlTRLTQDUhQsAWsnD4N29pzSzP0j1AdX20QHaFFfav4D5qxMZQDVoberAaMfvbga0C+iAq7RLtxy/tqmzn91ZafTURgB08Xuy1sV02v3wqD2uqRQgWrvtIOgNSdx+L4hqNdgM6EuG4EaddIPRTS5GqTfdr9psHQ6TmnrXIAGgq0jWv4zoGuvtpqMBrToD0N+RmtD2HfbZre5gMCWf0WvFv9WtKj6VdgLRbkA6VI+OnYe9if1td2nX1hbvYZKhCDBTEQPs6SPd+OVkD8cPhJJ1KvhU2uLQIY7GbZED+T5cAkC7m4N4J0CXF5rT4QHoJk6GLfxQONkLCj6Vds0d1OtNgb1ppqQHgzIA+g5iwlncUYI9FgCwIcvr4w4rP8BmBHfCqbI8GqQtQAzQilvgEHoWAugpAJI+QGsT2ERjZ8mcBSlwj4pLAkC7N/EmQBd3uKuxtasNLAGSvYBgbMsBhL8zWQVe32cqexTviTdiCQAdZYj3AtOqoDo1AUCgDRCAn1qno5PUfV8H0/QKOLTTU2XiJiABoC1LPA5IHY+nih0JGgHQdueBAC262/Hl49P6jt1BgPPuqHRGgsIjzfquKijrFsAMhcFPTaYLfdXgf8oconjCV2kdC4ga0D8AYI52wE9N2pw4U1zM7IEvfJHW0WBP1AkI+wDrTYB5S/BokDZLjTlZdgMVvkhrPkC4udG9QD9IV+pYwAiglXRe0vkAjXtfMwBWLYA5zhFNt9BZU3B1WAHMkuH9kDu8Y2aE+soJEKa1pBYhXXpzgtUDLEAXCOyy1QDxsQDrN0qaQJARaDGRxP16XLW+zquls8LM57W7rVkyzYy+AiAaXNAtFuqx1ABxn79nenx2qtfbDRL5WZcZ9cZzFKKJ8FZ3x85TWY0DwuVjZlz81SE6yXBIKtoI6byOP+XbiBqAhu0NkrHaiD3bOTxMu93oSLk7bTOPd+L5nxF8LuSwSh0m9sXHs/IzQzvZmVeUi05RdQ7hcrZosfMBYoBkOmm/G4VB8YOZ81Gd/j4YeunHgtirXdWojuQCAcW5wZXk3Bg+AEp2th1vSCeEAr29ALurriaHVLJPxe9IN5mDzsnBoWRSV3V6XHL2FS+u4PwxOycoARilWio9puxJz/l3mN2DDoCX6xIZ8fUHZHHroJEmQLq5JwfVO/H1EdUOOy7TAPCkk6XqK0R2nuAz6OK2ASNdgJQAM6vQElyXU+3sU+MjJUCHP79kCBCO+OGLcJLT4yP+Mg0RAGkuCUB0oRT/jhHBZM+9a8dfZYaHCoBOIJkL0QWIDEY1dgeIqp06Ho8uZ2MrWs5ZrY1eyPbBO/y7qSnUQe3Q5t6RPBHQ9ufvVxN+XzvF7wfXpKY+X/Z5oaTrBXBdnwCuF8B1fQK4XgDX9QngegFc1yeA6wVwXf8HVuSer4iLzMUAAAAASUVORK5CYII=",
+        "type": "image/png"
+    }
+}
