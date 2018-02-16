@@ -1,6 +1,6 @@
 {
-    "name": "CentOS Linux for Intel",
-    "description": "CentOS Linux application",
+    "name": "CentOS Linux with Notebook",
+    "description": "CentOS Linux for Intel with Jupyter Notebook",
     "author": "jhegge",
     "licensed": true,
     "classifications": [
@@ -65,7 +65,7 @@
                     "description": "activation script",
                     "type": "STR",
                     "value": "",
-                    "positional": true,
+                    "positional": false,
                     "required": false
                 },
                 "-r": {
@@ -73,7 +73,7 @@
                     "description": "requirements.txt",
                     "type": "STR",
                     "value": "",
-                    "positional": true,
+                    "positional": false,
                     "required": false
                 }
             }
