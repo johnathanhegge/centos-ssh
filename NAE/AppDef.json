@@ -64,7 +64,7 @@
                     "name": "-s",
                     "description": "activation script",
                     "type": "STR",
-                    "value": "-s",
+                    "value": "",
                     "positional": true,
                     "required": false
                 },
@@ -72,7 +72,7 @@
                     "name": "-r",
                     "description": "requirements.txt",
                     "type": "STR",
-                    "value": "-r",
+                    "value": "",
                     "positional": true,
                     "required": false
                 }
