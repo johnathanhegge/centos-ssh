@@ -61,19 +61,15 @@
             "description": "Launch Jupyter Notebook directly",
             "parameters": {
                 "-s": {
-                    "name": "-s",
-                    "description": "activation script",
-                    "type": "STR",
-                    "value": "",
-                    "positional": false,
+                    "name": "activation script",
+                    "description": "Notebook activation script",
+                    "type": "FILE",
                     "required": false
                 },
                 "-r": {
-                    "name": "-r",
-                    "description": "requirements.txt",
-                    "type": "STR",
-                    "value": "",
-                    "positional": false,
+                    "name": "requirements.txt",
+                    "description": "pip requirements.txt file",
+                    "type": "FILE",
                     "required": false
                 }
             }
