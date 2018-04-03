@@ -29,6 +29,10 @@
 FROM centos:7
 LABEL maintainer="Nimbix, Inc."
 
+# Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
+ARG SERIAL_NUMBER
+ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20180403.120000}
+
 ENV GIT_BRANCH testing
 RUN curl -H 'Cache-Control: no-cache' \
        https://raw.githubusercontent.com/nimbix/image-common/$GIT_BRANCH/install-nimbix.sh \
